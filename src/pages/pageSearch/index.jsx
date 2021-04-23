@@ -1,11 +1,13 @@
+import * as S from './style'
 
-import SearchInput from '../../components/searchInput/index'
+import Title from '../../components/title/index'
+import Form from '../../components/Form/index'
 
 export const PageSearch = () => {
   return (
-    <>
-      teste
-      <SearchInput />
-    </>
+    <S.Wrapper>
+      <Title>Search Devs</Title>
+      <Form/>
+    </S.Wrapper>
   )
 }

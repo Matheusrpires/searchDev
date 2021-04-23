@@ -1,10 +1,11 @@
 import * as S from './style'
 
-const SearchInput = () => {
+
+const SearchInput = ({placeholder}) => {
   return (
-    <S.Wrapper>
-      <input />
-    </S.Wrapper>
+    <>
+      <S.Input placeholder={placeholder}/>
+    </>
   )
 }
 
