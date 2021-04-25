@@ -1,8 +1,8 @@
 import * as S from './style'
 
-const Title = ({children}) => {
+const Title = ({children, color}) => {
   return (
-    <S.Title>
+    <S.Title color={color}>
       {children}
     </S.Title>
   )

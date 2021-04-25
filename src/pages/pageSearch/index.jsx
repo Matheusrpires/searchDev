@@ -6,7 +6,7 @@ import Form from '../../components/Form/index'
 export const PageSearch = () => {
   return (
     <S.Wrapper>
-      <Title>Search Devs</Title>
+      <Title color="dark">Search Devs</Title>
       <Form/>
     </S.Wrapper>
   )

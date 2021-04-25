@@ -1,12 +1,10 @@
 import * as S from './style'
 
-// import lupa from '../../../public/img/lupa.png'
-
-const Button = ({ children }) => {
+const Button = ({ children, type}) => {
 
   return (
     <>
-      <S.Button>
+      <S.Button type={type}>
         <S.Img src="./img/lupa.png" />
           {children}
       </S.Button>
