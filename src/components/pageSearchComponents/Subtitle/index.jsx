@@ -1,8 +1,8 @@
 import * as S from './style'
 
-const Subtitle = ({ children }) => {
+const Subtitle = ({ children, font }) => {
   return (
-    <S.Subtitle>
+    <S.Subtitle font={font}>
       {children}
     </S.Subtitle>
   )

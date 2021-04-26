@@ -18,3 +18,17 @@ export const Img = styled.img`
   margin-bottom: 2rem;
   align-self: center;
 `
+
+export const Number = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+export const SocialNetwork = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 13rem;
+  margin-bottom: 3rem;
+`

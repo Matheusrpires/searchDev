@@ -22,7 +22,7 @@ const Form = () => {
   return (
     <S.Form action="/search" role="search" onSubmit={handleSubmit}>
       <SearchInput placeholder="Type the username here..." InChange={handleUserChange} value={userName}/>
-      <Button type="submit">Buscar</Button>
+      <Button style="smallDark" imgStatus="true" type="submit">Buscar</Button>
     </S.Form>
   )
 }
