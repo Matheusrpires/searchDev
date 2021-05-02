@@ -6,26 +6,37 @@ import Description from '../Description/index'
 import SocialNumbers from '../SocialNumbers/index'
 import Button from '../../Button/index'
 
-const SideBar = () => {
+const SideBar = ({ userInfo }) => {
+
+  const userProgile = () => {
+    return !!userInfo ?
+      <>
+        <S.Img src={userInfo.avatar_url} alt="User github profile image" srcset="" />
+        <Title color={"light"}>{userInfo.login}</Title>
+        {!!userInfo.login && <Subtitle font='medium'>@{userInfo.login}</Subtitle>}
+        <Description>{userInfo.bio}</Description>
+        <S.Number>
+          {!!userInfo.followers && <SocialNumbers size="small">{userInfo.followers} followers</SocialNumbers>}
+          {!!userInfo.following && <SocialNumbers size="small">{userInfo.following} following</SocialNumbers>}
+          {!!userInfo.company && <SocialNumbers size="small"> stars</SocialNumbers>}
+        </S.Number>
+        <S.SocialNetwork>
+          {!!userInfo.company && <SocialNumbers size="medium">{userInfo.company}</SocialNumbers>}
+          {!!userInfo.location && <SocialNumbers size="medium">{userInfo.location}</SocialNumbers>}
+          {!!userInfo.email && <SocialNumbers size="medium">{userInfo.email}</SocialNumbers>}
+          {!!userInfo.blog && <SocialNumbers size="medium">{userInfo.blog}</SocialNumbers>}
+          {!!userInfo.twitter_username && <SocialNumbers size="medium">@{userInfo.twitter_username}</SocialNumbers>}
+        </S.SocialNetwork>
+        <S.Back href="/"><Button style="mediumWhite">Voltar</Button></S.Back>
+      </>
+      :
+      `
+    Error
+    `
+  }
   return (
     <S.Wrapper>
-      <S.Img src="https://avatars.githubusercontent.com/u/26113656?v=4" alt="User github profile image" srcset="" />
-      <Title color={"light"}>Matheus Rodrigues</Title>
-      <Subtitle font='medium'>@Matheusrpires</Subtitle>
-      <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt congue ligula in rutrum. Morbi nec lacus condimentum, hendrerit mi eu, feugiat.</Description>
-      <S.Number>
-        <SocialNumbers size="small">100 teste</SocialNumbers>
-        <SocialNumbers size="small">100 teste</SocialNumbers>
-        <SocialNumbers size="small">100 teste</SocialNumbers>
-      </S.Number>
-      <S.SocialNetwork>
-        <SocialNumbers size="medium">organization</SocialNumbers>
-        <SocialNumbers size="medium">organization</SocialNumbers>
-        <SocialNumbers size="medium">organization</SocialNumbers>
-        <SocialNumbers size="medium">organization</SocialNumbers>
-        <SocialNumbers size="medium">organization</SocialNumbers>
-      </S.SocialNetwork>
-      <Button style="mediumWhite">Voltar</Button>
+      {userProgile()}
     </S.Wrapper>
   )
 }

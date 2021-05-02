@@ -18,8 +18,8 @@ export const Wrapper = styled.div`
 `
 
 export const Img = styled.img`
-  ${({imgSize}) => css`
+  ${({imgSize, color}) => css`
     ${!!imgSize && imgOptions[imgSize]}
+    filter: brightness(0) invert(${!!color && color === "darker" ? '0' : '1'});
   `}
-  filter: brightness(0) invert(1);
 `

@@ -15,6 +15,7 @@ const buttonTyps = {
     justify-content: center;
     padding: .9rem .9rem;
     align-self: center;
+    margin-bottom: 21px;
   `
 }
 

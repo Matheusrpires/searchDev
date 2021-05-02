@@ -18,6 +18,8 @@
 .env.test.local
 .env.production.local
 todo.txt
+repoExemple.json
+userExample.json
 
 npm-debug.log*
 yarn-debug.log*
