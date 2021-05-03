@@ -39,3 +39,15 @@ export const Back = styled.a`
   display: contents;
   text-decoration: none;
 `
+
+export const Error = styled.div`
+  margin: 0 auto;
+`
+
+export const ErrorA = styled.a`
+  color: #ECEFF4;
+  font-family: Lato;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 50px;
+`

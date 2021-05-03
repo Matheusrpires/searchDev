@@ -2,10 +2,22 @@ import Subtitle from '../Subtitle/index'
 
 import * as S from './style'
 
-const SocialNumbers = ({children, img, size, imgSize, color}) => {
+const SocialNumbers = ({ children, size, color, icon }) => {
+
+  const checkImg = () => {
+    return !!icon ?
+      <>
+        <S.Img imgSize={size} color={color} src={`./img/${icon}.png`} alt="" />
+      </>
+      :
+      <>
+        <S.Dot></S.Dot>
+      </>
+  }
+
   return (
     <S.Wrapper>
-      <S.Img imgSize={size} color={color} src="./img/Raster.png" alt=""/>
+      {checkImg()}
       <Subtitle font={size} color={color}>{children}</Subtitle>
     </S.Wrapper>
   )

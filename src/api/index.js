@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-// const user = 'https://api.github.com/users/Matheusrpires'
-const user = 'https://api.github.com/users/DanielHe4rt'
+const user = 'https://api.github.com/users/Matheusrpires'
+// const user = 'https://api.github.com/users/DanielHe4rt'
 
-// const userRepo = 'https://api.github.com/users/Matheusrpires/repos'
-const userRepo = 'https://api.github.com/users/DanielHe4rt/repos'
+const userRepo = 'https://api.github.com/users/Matheusrpires/repos'
+// const userRepo = 'https://api.github.com/users/DanielHe4rt/repos'
 
 export const fetchUserData = async () => {
   try {

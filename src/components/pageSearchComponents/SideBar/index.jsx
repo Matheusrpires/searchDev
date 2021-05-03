@@ -16,23 +16,24 @@ const SideBar = ({ userInfo }) => {
         {!!userInfo.login && <Subtitle font='medium'>@{userInfo.login}</Subtitle>}
         <Description>{userInfo.bio}</Description>
         <S.Number>
-          {!!userInfo.followers && <SocialNumbers size="small">{userInfo.followers} followers</SocialNumbers>}
-          {!!userInfo.following && <SocialNumbers size="small">{userInfo.following} following</SocialNumbers>}
-          {!!userInfo.company && <SocialNumbers size="small"> stars</SocialNumbers>}
+          {!!userInfo.followers && <SocialNumbers size="small" icon="people">{userInfo.followers} followers</SocialNumbers>}
+          {!!userInfo.following && <SocialNumbers size="small" icon="heart">{userInfo.following} following</SocialNumbers>}
+          {!!userInfo.company && <SocialNumbers size="small" icon="star"> stars</SocialNumbers>}
         </S.Number>
         <S.SocialNetwork>
-          {!!userInfo.company && <SocialNumbers size="medium">{userInfo.company}</SocialNumbers>}
-          {!!userInfo.location && <SocialNumbers size="medium">{userInfo.location}</SocialNumbers>}
-          {!!userInfo.email && <SocialNumbers size="medium">{userInfo.email}</SocialNumbers>}
-          {!!userInfo.blog && <SocialNumbers size="medium">{userInfo.blog}</SocialNumbers>}
-          {!!userInfo.twitter_username && <SocialNumbers size="medium">@{userInfo.twitter_username}</SocialNumbers>}
+          {!!userInfo.company && <SocialNumbers size="medium" icon="building">{userInfo.company}</SocialNumbers>}
+          {!!userInfo.location && <SocialNumbers size="medium" icon="location">{userInfo.location}</SocialNumbers>}
+          {!!userInfo.email && <SocialNumbers size="medium" icon="mail">{userInfo.email}</SocialNumbers>}
+          {!!userInfo.blog && <SocialNumbers size="medium" icon="link">{userInfo.blog}</SocialNumbers>}
+          {!!userInfo.twitter_username && <SocialNumbers size="medium" icon="twitter">@{userInfo.twitter_username}</SocialNumbers>}
         </S.SocialNetwork>
         <S.Back href="/"><Button style="mediumWhite">Voltar</Button></S.Back>
       </>
       :
-      `
-    Error
-    `
+      <S.Error>
+        <S.ErrorA>Usuário nao encontrado</S.ErrorA>
+        <S.Back href="/"><Button style="mediumWhite">Voltar</Button></S.Back>
+      </S.Error>
   }
   return (
     <S.Wrapper>

@@ -13,6 +13,8 @@ export const PageResult = () => {
 
   const [userInfo, setUser] = useState();
   const [userRepoInfo, setUserRepoInfo] = useState();
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const searchedUser = new URLSearchParams(useLocation().search).get('user')
 
   const userSearched = () => {
@@ -20,8 +22,9 @@ export const PageResult = () => {
   useEffect(() => {
     const fetch = async () => {
       const data = await fetchUserData();
-      setUser(data)
-      return data;
+      console.log("data", data)
+      !!data ? setUser(data) : setError(true)
+      // return data;
     }
     const fetchREpo = async () => {
       const data = await fetchRepoData();
@@ -32,8 +35,18 @@ export const PageResult = () => {
     fetchREpo();
   }, []);
 
+  const apiError = () => {
+    return error ? 
+    <>
+    {/* Errorrrrrrrr */}
+    </>
+    :
+    null
+  }
+
   return (
     <S.Wrapper>
+      {apiError()}
       <SideBar userInfo={userInfo} />
       <RepositorysMap repoInfo={userRepoInfo} />
     </S.Wrapper>
